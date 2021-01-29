@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3d8af50c2d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>TEST</title>
 </head>
+
 <body>
     <div class="box" id="heading">
         <h1>Wishlist</h1>
     </div>
 
-    
+    <div class="box">
+        <div class="mainView">
+            <div class="table">
+                <table>
+                    <th>
+                        <p>Wish</p>
+                    </th>
+                    <th>
+                        <p>Price</p>
+                    </th>
+                    <% for(let i = 0; i < wishItems.length; i++) { %>
+
+                    <!-- <input name="checkbox" value="<%= wishItems[i].description %>" type="checkbox" onchange="this.form.submit()"> -->
+                    <tr>
+                        <td>
+                            <p><%= wishItems[i].description %></p>
+                        </td>
+                        <td>
+                            <p><%= wishItems[i].price %></p>
+                        </td>
+                        <td>
+                            <form action="/delete" method="POST">
+                                <div class="delete-btn">
+                                    <input type="hidden" value="<%= wishItems[i].description %>" name="wishDelete">
+                                    <button type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </form>
+                        </td>
+                    </tr>
+
+                    <!-- <p><%= wishItems[i].description %></p>
+                        <p>Price: <%= wishItems[i].price %></p> -->
+                    <% } %>
+                </table>
+            </div>
+
+            <form action="/" method="POST">
+                <input id="description_field" type="text" name="newWish" placeholder="Add a Wish" value="example wish"
+                    required="true">
+                <input id="price_field" type="number" min="0" name="newPrice" placeholder="Add a Price" value="0"
+                    required="true">
+                <button class="submit-main" type="submit">+</button>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <span class="footer">Jan-Marcus S. &#169 2021</span>
     </footer>
 </body>
+
 </html>
