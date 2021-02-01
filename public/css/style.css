@@ -5,9 +5,8 @@
   }
   
   html {
-      background-color: var(--dark-color);
       background-repeat: no-repeat;
-      min-height: 1400px;
+      min-height: 1500px;
       font-family: 'helvetica neue';
     }
     
@@ -16,9 +15,13 @@
       padding: 10px;
     }
     
+    .container {
+      height: 100vh;
+    }
+
     .box {
-      max-width: 600px;
-      margin: 50px auto;
+      max-width: 700px;
+      margin: 0px auto;
       background: white;
       border-radius: 5px;
       box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
@@ -26,13 +29,11 @@
 
     .mainView {
       margin: auto;
-      width: 60%;
-      border: 2px solid #F1F1F1;
-      padding: 10px;
+      padding: 15px;
     }
     
     #heading {
-      background-color: var(--dark-color);
+      background-color: rgb(192, 192, 192);
       text-align: center;
     }
     
@@ -40,7 +41,6 @@
       min-height: 70px;
       display: flex;
       align-items: center;
-      /* border-bottom: 1px solid #F1F1F1; */
     }
     
     .item:last-child {
@@ -65,7 +65,7 @@
     }
 
     table {
-      border-collapse: collapse;
+      border-collapse: initial;
     }
 
     .table {
@@ -73,11 +73,17 @@
       margin-left: 20px;
     }
 
-    td, th {
-      text-align: left;
+    th {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      border-bottom: 1px solid #F1F1F1;
+      font-weight: 900;
+    }
+
+    td {
+      text-align: center;
 
       margin: 0;
-      padding: 20px;
       padding-top: 10px;
       padding-bottom: 10px;
       font-size: 20px;
@@ -89,59 +95,45 @@
     #description_field {
       text-align: left;
       margin-left: 20px;
-      width: 26rem;
       padding: 10px;
       font-size: 20px;
       font-weight: 200;
-      border: 1px solid #F1F1F1;
     }
     #price_field {
       text-align: left;
       margin-left: 20px;
-      width: 21rem;
       padding: 20px;
       font-size: 20px;
       font-weight: 200;
-      border: 1px solid #F1F1F1;
     }
 
-    .delete-btn {
-      padding-left: 2rem;
+    button, button:active {
+      text-decoration: none;
+      background: transparent;
+      border: none;
     }
 
     .fa-trash-alt {
       text-decoration: none;
       color: red;
-    }
-    
-    button {
-      min-height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      border-color: transparent;
-      color: #fff;
-      font-size: 30px;
-      padding-bottom: 6px;
-      border-width: 0;
+      font-size: 2rem;
     }
 
-    .submit-main {
-      min-height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      border-color: transparent;
-      background-color: var(--dark-color);
-      color: #fff;
-      font-size: 30px;
-      padding-bottom: 6px;
-      border-width: 0;
+    .submit-button {
+      margin-top: 1.5rem;
+      margin-left: 20px;
     }
     
+    input {
+      margin: 0.5rem;
+    }
+
     input[type="text"] {
       text-align: center;
       height: 40px;
       top: 10px;
-      border: none;
+      border-radius: 5px;
+      border: 1px solid #F1F1F1;
       background: transparent;
       font-size: 20px;
       font-weight: 200;
@@ -152,6 +144,11 @@
       text-align: center;
       height: 20px;
       top: 10px;
+      border-radius: 5px;
+      border: 1px solid #F1F1F1;
+      background: transparent;
+      font-size: 20px;
+      font-weight: 200;
     }
     
     input[type="text"]:focus, input[type="number"]:focus {
@@ -171,6 +168,8 @@
     }
 
     .footer {
-      color: white;
-      font-size: 1.2rem;
+      display: inline-block;
+      color: black;
+      font-size: 1.4rem;
+      margin: 1rem;
     }

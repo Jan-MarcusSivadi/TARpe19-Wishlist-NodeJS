@@ -4,9 +4,16 @@ const Wish = require('../models/wish');
 // Render main Page
 exports.getMainPage = (req, res) => {
     Wish.fetchWishes(wishes => {
+        let total = 0;
+        
+        wishes.forEach(wish => {
+            total += parseFloat(wish.price);
+        });
+        total = total.toFixed(2);
 
         console.log(wishes);
-        res.render('index.ejs', {wishItems : wishes});
+        console.log("Total price: "+total);
+        res.render('index.ejs', {wishItems: wishes, TotalPrice: total} );
     });
 };
 // POST new Task
