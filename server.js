@@ -2,6 +2,7 @@
 const express = require('express');
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
+require('./models/db');//!!
 const routes = require('./routes/web');
 
 // use express

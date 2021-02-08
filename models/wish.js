@@ -1,10 +1,13 @@
+/// Export Wish class
+/*OLD CODE*/
+/*
+
 /// Imports
 const fs = require('fs');
 const path = require('path');
 const { callbackify } = require('util');
 const filePath = path.join(path.dirname(require.main.filename), 'data', 'wishes.json');
 
-/// Export Wish class
 module.exports = class Wish {
 
     // constrtuctor
@@ -65,6 +68,21 @@ module.exports = class Wish {
         });
     }
 }
+*/
+
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const wishSchema = new Schema({
+    description: {
+        type: String
+    },
+    price: {
+        type: Number
+    }
+});
+
+mongoose.model('Wish', wishSchema);
 
 //{description: "Wish1", "price" : 25} - json
 //{"description": "Wish1" "price" : 25} - js object
